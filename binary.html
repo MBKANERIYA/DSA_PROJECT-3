@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            let a = [1, 4, 7, 2, 5, 3]
+
+            let search = (a, element, start, end) => {
+                let mid = (start + end) / 2
+
+                if (end < start) {
+                    return false
+                }
+
+                if (a[mid] == element) {
+                    return true;
+                }
+
+                if (a[mid] > element) {
+                    return search(a, element, start, mid - 1)
+                }
+                else {
+                    return search(a, element, mid + 1, end)
+                }
+            }
+
+            let result = search(a, 2, 0, a.length)
+            console.log(result);
+
+        </script>
+    </body>
+
+</html>
